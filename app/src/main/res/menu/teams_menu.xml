@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/filter_teams"
+        android:icon="@drawable/ic_filter"
+        android:title="@string/sort"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/filter_a_to_z"
+                android:title="@string/A_to_Z" />
+            <item
+                android:id="@+id/filter_z_to_a"
+                android:title="@string/Z_to_A" />
+            <item
+                android:id="@+id/filter_wins"
+                android:title="@string/wins" />
+
+            <item
+                android:id="@+id/filter_loses"
+                android:title="@string/losses" />
+
+        </menu>
+    </item>
+</menu>

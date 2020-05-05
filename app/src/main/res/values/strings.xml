@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">theScoreAssignment</string>
+
+    <string name="team_name">Team name %s</string>
+    <string name="team_wins">Wins %s</string>
+    <string name="team_losses">Losses %s</string>
+
+    <string name="name">Team name</string>
+    <string name="wins">Wins</string>
+    <string name="losses">Losses</string>
+
+    <string name="sort">Sort</string>
+    <string name="A_to_Z">A to Z</string>
+    <string name="Z_to_A">Z to A</string>
+
+    <string name="players">Players</string>
+    <string name="full_name">Full name: %s</string>
+    <string name="position">Position: %s</string>
+    <string name="number">Number: %s</string>
+</resources>

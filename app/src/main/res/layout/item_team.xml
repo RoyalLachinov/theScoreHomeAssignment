@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="team"
+            type="com.thescore.android.model.Team" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_item_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="0.0px"
+        app:cardCornerRadius="@dimen/size_4_dp"
+        app:cardElevation="@dimen/size_2_dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:minHeight="@dimen/size_60_dp"
+            android:padding="@dimen/size_4_dp">
+
+            <TextView
+                android:id="@+id/txt_count"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_4_dp"
+                android:textColor="@color/text_color"
+                android:textIsSelectable="false"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_team_name"
+                app:layout_constraintEnd_toStartOf="@+id/txt_team_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txt_team_name"
+                app:layout_constraintWidth_percent="0.1" />
+
+            <TextView
+                android:id="@+id/txt_team_name"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_4_dp"
+                android:text="@{team.fullName}"
+                android:textColor="@color/text_color"
+                android:textIsSelectable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_count"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.4" />
+
+            <TextView
+                android:id="@+id/txt_wins"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_4_dp"
+                android:text="@{String.valueOf(team.wins)}"
+                android:textColor="@color/text_color"
+                android:textIsSelectable="false"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_team_name"
+                app:layout_constraintEnd_toStartOf="@+id/txt_losses"
+                app:layout_constraintStart_toEndOf="@+id/txt_team_name"
+                app:layout_constraintTop_toTopOf="@+id/txt_team_name"
+                app:layout_constraintWidth_percent="0.2" />
+
+
+            <TextView
+                android:id="@+id/txt_losses"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_4_dp"
+                android:text="@{String.valueOf(team.losses)}"
+                android:textColor="@color/text_color"
+                android:textIsSelectable="false"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_team_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txt_wins"
+                app:layout_constraintTop_toTopOf="@+id/txt_team_name"
+                app:layout_constraintWidth_percent="0.3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

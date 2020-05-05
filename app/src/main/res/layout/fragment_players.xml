@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="team"
+            type="com.thescore.android.model.Team" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.PlayersFragment">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layout_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="0.0px"
+            android:padding="@dimen/size_4_dp"
+            app:cardCornerRadius="@dimen/size_4_dp"
+            app:cardElevation="@dimen/size_2_dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/size_4_dp">
+
+                <TextView
+                    android:id="@+id/txt_selected_team_name"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="@dimen/size_4_dp"
+                    android:text="@{String.format(@string/team_name, team.fullName)}"
+                    android:textColor="@color/text_color"
+                    android:textIsSelectable="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_selected_team_wins"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="@dimen/size_4_dp"
+                    android:text="@{String.format(@string/team_wins, team.wins)}"
+                    android:textColor="@color/text_color"
+                    android:textIsSelectable="false"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_selected_team_name"
+                    app:layout_constraintStart_toStartOf="@+id/txt_selected_team_name"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_selected_team_name" />
+
+
+                <TextView
+                    android:id="@+id/txt_selected_team_losses"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="@dimen/size_4_dp"
+                    android:text="@{String.format(@string/team_losses, team.losses)}"
+                    android:textColor="@color/text_color"
+                    android:textIsSelectable="false"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_selected_team_name"
+                    app:layout_constraintStart_toStartOf="@+id/txt_selected_team_name"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_selected_team_wins" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_players"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_4_dp"
+            android:gravity="start|center"
+            android:padding="@dimen/size_4_dp"
+            android:text="@string/players"
+            android:textColor="@color/text_color"
+            android:textIsSelectable="false"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_team" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_players"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/size_4_dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_players"
+            tools:itemCount="20"
+            tools:listitem="@layout/item_player" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_players"
+            android:layout_width="@dimen/size_60_dp"
+            android:layout_height="@dimen/size_60_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
